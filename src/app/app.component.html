@@ -1,376 +1,218 @@
-<div class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-  <!-- Navigation -->
-  <header class="bg-gradient-to-r from-blue-500 to-purple-500 dark:from-gray-800 dark:to-gray-900 py-4">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <nav class="flex items-center space-x-6 bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-md">
-        <a href="#home" class="hover:text-blue-600 dark:text-gray-300">Home</a>
-        <a href="#about" class="hover:text-blue-600 dark:text-gray-300">About</a>
-        <a href="#portfolio" class="hover:text-blue-600 dark:text-gray-300">Portfolio</a>
-        <a href="#contact" class="hover:text-blue-600 dark:text-gray-300">Contact</a>
-      </nav>
-  
-      <!-- Actions: Language Selector + Dark Mode -->
-      <div class="flex items-center space-x-4">
-        <!-- Language Selector -->
-        <div class="relative">
-          <button
-            class="flex items-center px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 shadow-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition focus:outline-none"
-            (click)="toggleLanguageDropdown()"
-          >
-            <!-- Display Current Language Flag -->
-            <span class="flex items-center space-x-2">
-              <span *ngIf="language === 'en'" class="flex items-center">
-                <img src="assets/flags/usa.png" alt="English" class="w-5 h-5 mr-2" />
-                English
-              </span>
-              <span *ngIf="language === 'mn'" class="flex items-center">
-                <img src="assets/flags/mgl.png" alt="Mongolian" class="w-5 h-5 mr-2" />
-                Монгол
-              </span>
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+
+<div class="flex h-full bg-zinc-50 dark:bg-black">
+  <div class="flex w-full">
+    <div class="fixed inset-0 flex justify-center sm:px-8">
+      <div class="flex w-full max-w-7xl lg:px-8">
+        <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+        </div>
+      </div>
+    </div>
+    <div class="relative flex w-full flex-col">
+      <header class="pointer-events-none relative z-50 py-8">
+        <div class="mx-auto w-full max-w-7xl lg:px-8">
+          <div class="relative px-4 sm:px-8 lg:px-12">
+            <div class="mx-auto max-w-2xl lg:max-w-5xl">
+              <div class="relative flex gap-4">
+                <div class="flex flex-1">
+                </div>
+                <div class="flex flex-1 justify-end md:justify-center">
+                  <nav class="pointer-events-auto md:block">
+                    <ul class="flex rounded-full px-3 text-sm font-medium custom-background">
+                      <li *ngFor="let menu of menus">
+                        <a [href]="menu.href" class="relative block px-3 py-2 custom-text-link cursor-pointer">{{menu.name}}</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="flex justify-end md:flex-1">
+                  <div class="pointer-events-auto">
+                    <button
+                      (click)="toggleTheme()"
+                      class="rounded-full bg-white/90 px-3 py-2 custom-background cursor-pointer"
+                    >
+                    <img src="assets/modes/light.png" alt="light-mode" class="rounded-full h-6 w-6" [class.hidden]="isDarkMode"/>
+                    <img src="assets/modes/dark.png" alt="dark-mode" class="rounded-full h-6 w-6" [class.hidden]="!isDarkMode"/>
+                  </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </header>
+
+      <main class="flex-auto">
+<!--        flex w-full max-w-7xl lg:px-8-->
+        <div class="sm:px-8 mt-9">
+
+          <div class="mx-auto w-full max-w-7xl lg:px-8">
+            <div class="relative px-4 sm:px-8 lg:px-12">
+
+              <div class="mx-auto max-w-2xl lg:max-w-5xl">
+                <div class="relative z-10">
+                  <div class="w-28 h-28 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center transform transition hover:scale-110 cursor-pointer">
+                    <img
+                      src="assets/profile.jpg"
+                      alt="Profile Picture"
+                      class="w-24 h-24 rounded-full border-4 border-white dark:border-gray-800 object-cover "
+                    />
+                  </div>
+                </div>
+
+                <div class="max-w-2xl">
+                  <div class="mt-6 z-10">
+                    <h1 class="text-3xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100 leading-normal">
+                      Fullstack developer, freelancer and software architect
+                    </h1>
+                    <p class="mt-4 custom-text">
+                      Hi, I'm Uuganaa, Welcome to my portfolio. I love building software that solves real-world problems.
+                      Welcome to my portfolio. I love building software that solves real-world problems.
+                    </p>
+                  </div>
+                  <div class="flex justify-items-start mt-4 space-x-4">
+                    <a href="https://github.com" target="_blank" class="custom-text-link">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="custom-text-link">LinkedIn</a>
+                    <a href="/contact" class="custom-text-link">Contact</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+        <div class="mt-16 sm:mt-20">
+          <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8 sm:h-80 ">
+            <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+              <img
+                src="assets/profile.jpg"
+                alt="Profile Picture"
+                class="absolute inset-0 h-full w-full object-cover"
               />
-            </svg>
-          </button>
-        
-          <!-- Dropdown -->
-          <div
-            *ngIf="showLanguageDropdown"
-            class="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg border border-gray-300 dark:border-gray-700 rounded-md w-40"
-          >
-            <ul>
-              <li>
-                <button
-                  class="w-full px-4 py-2 flex items-center hover:bg-gray-200 dark:hover:bg-gray-700"
-                  (click)="changeLanguage('en')"
-                >
-                  <img src="assets/flags/usa.png" alt="English" class="w-5 h-5 mr-2" />
-                  English
-                </button>
-              </li>
-              <li>
-                <button
-                  class="w-full px-4 py-2 flex items-center hover:bg-gray-200 dark:hover:bg-gray-700"
-                  (click)="setLanguage('mn')"
-                >
-                  <img src="assets/flags/mgl.png" alt="Mongolian" class="w-5 h-5 mr-2" />
-                  Монгол
-                </button>
-              </li>
-            </ul>
+            </div>
+            <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
+              <img
+                src="assets/profile.jpg"
+                alt="Profile Picture"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+              <img
+                src="assets/profile.jpg"
+                alt="Profile Picture"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
+              <img
+                src="assets/profile.jpg"
+                alt="Profile Picture"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
+              <img
+                src="assets/profile.jpg"
+                alt="Profile Picture"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
-  
-        <!-- Dark/Light Mode Toggle -->
-        <button
-          (click)="toggleTheme()"
-          class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-        >
-        <img src="assets/modes/light.png" alt="light-mode" class="h-6 w-6 rounded-full" [class.hidden]="!isDarkMode"/>
-        <img src="assets/modes/dark.png" alt="light-mode" class="h-6 w-6 rounded-full" [class.hidden]="isDarkMode"/>
-        </button>
-      </div>
-    </div>
-  </header>
-  
-  <!-- <app-canvas-animation></app-canvas-animation> -->
-  <main class="relative flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
-    <router-outlet/>
-    <!-- Your existing content goes here -->
-    <!-- Profile Image with Hover Animation -->
-    <div class="relative">
-      <div
-        class="w-40 h-40 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center transform transition hover:scale-110"
-      >
-        <img
-          src="assets/profile.jpg"
-          alt="Profile Picture"
-          class="w-36 h-36 rounded-full border-4 border-white dark:border-gray-800 object-cover"
-        />
-      </div>
-    </div>
-  
-    <!-- Text Section -->
-    <div class="text-center mt-6">
-      <h1 class="text-4xl font-bold">
-        Hi, I'm <span class="text-blue-500 dark:text-purple-400">Uuganaa</span>
-      </h1>
-      <p class="mt-4 text-gray-600 dark:text-gray-400">
-        Welcome to my portfolio. I love building software that solves real-world problems.
-      </p>
-    </div>
-  </main>
-  
-  
-<section id="portfolio" class="py-16 bg-white dark:bg-gray-900">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-gray-900 text-center">
-      My Recent Work
-    </h2>
-    <p class="mt-2 text-gray-600 text-center">
-      A showcase of some of my favorite projects.
-    </p>
 
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div
-        *ngFor="let project of projects"
-        class="group bg-gray-100 dark:bg-gray-500 p-4 rounded-lg shadow-md hover:shadow-lg transition"
-      >
-        <img
-          [src]="project.image"
-          alt="{{ project.title }}"
-          class="w-full h-48 object-cover rounded-lg"
-        />
-        <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-purple-400 group-hover:text-blue-600">
-          {{ project.title }}
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-purple-400">{{ project.description }}</p>
-      </div>
+        <div class="sm:px-8 mt-24 md:mt-28">
+          <div class="mx-auto w-full max-w-7xl lg:px-8">
+            <div class="relative px-4 sm:px-8 lg:px-12">
+              <div class="mx-auto max-w-2xl lg:max-w-5xl">
+                <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+                  <div class="flex flex-col gap-16">
+                    <article class="group relative flex flex-col items-start cursor-pointer" *ngFor="let item of articles">
+                      <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                        <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"></div>
+                        <a>
+                          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+                          <span class="relative z-10">{{ item.title }}</span>
+                        </a>
+                      </h2>
+                      <time class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5" datetime="2022-09-05">
+                        <span class="absolute inset-y-0 left-0 flex items-center">
+                          <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+                        </span>
+                        {{ item.time }}
+                      </time>
+                      <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                        {{ item.text }}
+                      </p>
+                      <div class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500">
+                        Read article
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-1 h-4 w-4 stroke-current">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="space-y-10 lg:pl-16 xl:pl-24">
+                    <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+                      <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 flex-none">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+                        </svg>
+                        <span class="ml-3">Work</span>
+                      </h2>
+
+                      <ol class="mt-6 space-y-4">
+                        <li class="flex gap-4" *ngFor="let item of works">
+                          <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                              <img
+                                [src]="item.logo"
+                                alt="Profile Picture"
+                                class="h-7 w-7 rounded-full"/>
+                          </div>
+                          <dl class="flex flex-auto flex-wrap gap-x-2">
+                            <dt class="sr-only">Company</dt>
+                            <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">{{item.name}}</dd>
+                            <dt class="sr-only">Role</dt>
+                            <dd class="text-xs text-zinc-500 dark:text-zinc-400">{{item.role}}</dd>
+                            <dt class="sr-only">Date</dt>
+                            <dd class="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
+                              <time datetime="2019">{{item.beginYear}}</time>
+                              <span>-</span>
+                              <time datetime="2025">{{item.endYear}}</time>
+                            </dd>
+                          </dl>
+                        </li>
+                      </ol>
+
+                      <a class="cursor-pointer inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full">
+                        Download CV
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mt-32 flex-none">
+        <div class="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
+          <div class="max-w-7xl mx-auto px-6 text-center">
+            <p>© 2025 Uuganbayar. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
     </div>
   </div>
-</section>
-
-<section class="py-12 bg-gray-100 dark:bg-gray-900 transition-colors">
-  <div class="container max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-      My Journey
-    </h2>
-
-    <!-- Split Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Left Side: Education -->
-      <div>
-        <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
-          Education
-        </h3>
-        <div class="relative border-l-4 border-blue-500 dark:border-purple-400">
-          <!-- Entry 1 -->
-          <div
-            class="mb-10 ml-8 group hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg p-4 transition opacity-0 transform translate-x-[-50px]"
-            data-aos="fade-right"
-          >
-            <div class="absolute -left-4 w-8 h-8 bg-blue-500 dark:bg-purple-400 rounded-full border-4 border-white dark:border-gray-900"></div>
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-              Bachelor of Computer Science
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400">XYZ University</p>
-            <p class="text-gray-500 dark:text-gray-500 text-sm">2012 - 2016</p>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              Focused on software development, algorithms, and system architecture. Participated in open-source projects.
-            </p>
-          </div>
-
-          <!-- Entry 2 -->
-          <div
-            class="mb-10 ml-8 group hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg p-4 transition opacity-0 transform translate-x-[-50px]"
-            data-aos="fade-right"
-          >
-            <div class="absolute -left-4 w-8 h-8 bg-blue-500 dark:bg-purple-400 rounded-full border-4 border-white dark:border-gray-900"></div>
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-              Master's in Artificial Intelligence
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400">Maharishi International University</p>
-            <p class="text-gray-500 dark:text-gray-500 text-sm">2025 - 2027 (Ongoing)</p>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              Advanced studies in AI, machine learning, and ethical AI systems.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Side: Work Experience -->
-      <div>
-        <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
-          Work Experience
-        </h3>
-        <div class="relative border-l-4 border-green-500 dark:border-yellow-400">
-          <!-- Entry 1 -->
-          <div
-            class="mb-10 ml-8 group hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg p-4 transition opacity-0 transform translate-x-[50px]"
-            data-aos="fade-left"
-          >
-            <div class="absolute -left-4 w-8 h-8 bg-green-500 dark:bg-yellow-400 rounded-full border-4 border-white dark:border-gray-900"></div>
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-              IT Manager
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400">ABC Corporation</p>
-            <p class="text-gray-500 dark:text-gray-500 text-sm">2018 - 2024</p>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              Managed software development teams, implemented CI/CD pipelines, and improved system reliability.
-            </p>
-          </div>
-
-          <!-- Entry 2 -->
-          <div
-            class="mb-10 ml-8 group hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg p-4 transition opacity-0 transform translate-x-[50px]"
-            data-aos="fade-left"
-          >
-            <div class="absolute -left-4 w-8 h-8 bg-green-500 dark:bg-yellow-400 rounded-full border-4 border-white dark:border-gray-900"></div>
-            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-              Backend Developer
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400">Simple.mn</p>
-            <p class="text-gray-500 dark:text-gray-500 text-sm">2015 - 2018</p>
-            <p class="mt-2 text-gray-700 dark:text-gray-300">
-              Developed scalable backend systems, integrated APIs, and optimized performance for enterprise applications.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-12 bg-gray-100 dark:bg-gray-900 transition-colors">
-  <div class="container max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
-      Technologies I Use
-    </h2>
-
-    <!-- Front-End Technologies -->
-    <div class="mb-10">
-      <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Front-End Technologies</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <!-- Angular -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
-            alt="Angular"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">Angular</p>
-        </div>
-        <!-- JavaScript -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">JavaScript</p>
-        </div>
-        <!-- TypeScript -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-            alt="TypeScript"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">TypeScript</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Back-End Technologies -->
-    <div class="mb-10">
-      <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Back-End Technologies</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <!-- Java -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-            alt="Java"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">Java</p>
-        </div>
-        <!-- Spring Boot -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-            alt="Spring Boot"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">Spring Boot</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Databases -->
-    <div class="mb-10">
-      <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Databases</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <!-- MySQL -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-            alt="MySQL"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">MySQL</p>
-        </div>
-        <!-- Oracle -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
-            alt="Oracle"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">Oracle</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Caching -->
-    <div>
-      <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Caching</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <!-- Redis -->
-        <div
-          class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md group hover:shadow-lg transition"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
-            alt="Redis"
-            class="w-12 h-12 mb-4 group-hover:scale-110 transition-transform"
-          />
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">Redis</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="bg-gradient-to-r from-blue-500 to-purple-500 dark:from-gray-800 dark:to-gray-900 py-8">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <p>© 2025 Your Name. All rights reserved.</p>
-    <div class="flex justify-center mt-4 space-x-4">
-      <a href="https://github.com" target="_blank" class="hover:text-white">GitHub</a>
-      <a href="https://linkedin.com" target="_blank" class="hover:text-white">LinkedIn</a>
-      <a href="/contact" class="hover:text-white">Contact</a>
-    </div>
-  </div>
-</footer>
-
 </div>

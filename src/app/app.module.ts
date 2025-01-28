@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { CanvasAnimationComponent } from './canvas-animation/canvas-animation.component';
 import {AppRoutingModule} from './app-routing.module';
+import {NgxTippyModule} from "ngx-tippy-wrapper";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CanvasAnimationComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxTippyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
