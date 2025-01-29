@@ -1,0 +1,39 @@
+<div class="sm:px-8 mt-16 md:mt-16">
+  <div class="mx-auto w-full max-w-7xl lg:px-8">
+    <div class="relative px-4 sm:px-8 lg:px-12">
+      <div class="mx-auto max-w-2xl lg:max-w-5xl">
+
+    <!-- Return to list button -->
+    <button
+      (click)="goBack()"
+      class="mb-4 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+    >
+      Return to List
+    </button>
+
+    <!-- Article Title -->
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ article.title }}</h1>
+
+    <!-- Article Description -->
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">{{ article.description }}</p>
+
+    <!-- Article Image and Short Description -->
+    <div class="mb-8">
+      <img
+        [src]="article.image"
+        alt="Article Image"
+        class="w-full h-64 object-cover rounded-lg shadow-lg"
+      />
+      <p class="mt-2 text-gray-600 dark:text-gray-400 text-sm">{{ article.imageDescription }}</p>
+    </div>
+
+    <!-- Article Summary Section -->
+    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Summary</h2>
+      <p class="mt-2 text-gray-600 dark:text-gray-300">{{ article.summary }}</p>
+    </div>
+
+      </div>
+    </div>
+  </div>
+</div>
