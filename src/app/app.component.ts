@@ -45,12 +45,19 @@ export class AppComponent implements OnInit {
 
   constructor() {}
 
+  projectsCount = '20+';
+  experienceCount = 10;
+  clientsCount = '100+';
 
   ngOnInit() {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
       easing: 'ease-in-out', // Easing function
     });
+
+    this.animateValue(20, this.projectsCount);
+    this.animateValue(10, this.experienceCount);
+    this.animateValue(120, this.clientsCount);
   }
 
   isDarkMode = false;
@@ -151,5 +158,16 @@ export class AppComponent implements OnInit {
 
   randomOffset(): number {
     return Math.random() * 30 - 15; // Random vertical offset between -15px and +15px
+  }
+
+  animateValue(finalValue: number, property: any, duration: number = 2000): void {
+    const step = (timestamp: number, startTimestamp: number) => {
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      property = Math.floor(progress * finalValue);
+      if (progress < 1) {
+        requestAnimationFrame((timestamp) => step(timestamp, startTimestamp));
+      }
+    };
+    requestAnimationFrame((timestamp) => step(timestamp, performance.now()));
   }
 }

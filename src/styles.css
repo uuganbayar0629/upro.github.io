@@ -9,7 +9,7 @@
   }
 
   .custom-text-link {
-    @apply transition text-zinc-800 dark:text-zinc-200 hover:text-blue-500/80 dark:hover:text-blue-300;
+    @apply text-primary hover:text-secondary transition-all transform hover:scale-110;
   }
 
   .custom-text {
@@ -20,4 +20,69 @@
 .sm\:text-5xl {
   font-size: 3rem;
   line-height: 1.25;
+}
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a2e; /* Custom dark color */
+  --text-light: #000000;
+  --text-dark: #e6e6e6;
+}
+
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.work-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  backdrop-filter: blur(10px);
+}
+
+.timeline-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  padding: 1rem;
+}
+
+.work-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-labels {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.timeline-labels span {
+  font-size: 0.875rem;
+}
+
+.timeline-container .work-item:first-child::before {
+  content: none; /* No line for the first item */
+}
+
+.timeline-container .work-item:last-child::after {
+  content: none; /* No line for the last item */
+}
+
+.timeline-container .timeline-line {
+  position: absolute;
+  bottom: 0;
+  height: 0.5rem;
+  background: gray;
 }
