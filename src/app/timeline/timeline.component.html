@@ -1,8 +1,4 @@
 <section class="timeline-container py-10 flex flex-col items-center">
-  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-    Work Experience Timeline
-  </h2>
-
   <div class="relative flex items-center w-full max-w-5xl">
     <!-- Wavy Line -->
     <svg
@@ -19,21 +15,20 @@
     </svg>
 
     <!-- Timeline Items -->
-    <div
-      *ngFor="let work of works"
-      class="relative flex flex-col items-center w-1/5 text-center"
-    >
-      <!-- Company Logo -->
+    <div *ngFor="let work of works" class="relative flex flex-col items-center w-1/5 text-center group">
+      <!-- Company Logo with Animation -->
       <div
-        class="relative w-16 h-16 bg-gray-200 rounded-full overflow-hidden shadow-md border-2 border-blue-500"
+        class="relative w-16 h-16 bg-gray-200 rounded-full overflow-hidden shadow-md border-2 border-blue-500
+               animate-bounce hover:animate-none transition-transform duration-100 group-hover:scale-110"
       >
-        <img [src]="work.logo" [alt]="work.name" class="w-full h-full object-cover" />
+        <img [src]="work.logo" [alt]="work.name"
+             class="w-full h-full object-cover transform transition-transform duration-500 group-hover:rotate-6">
       </div>
 
       <!-- Tooltip -->
-      <div class="absolute top-0 transform -translate-y-12 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 transition-opacity group-hover:opacity-100">
-        {{ work.tooltip }}
-      </div>
+<!--      <div class="absolute top-0 transform -translate-y-12 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 transition-opacity group-hover:opacity-100">-->
+<!--        {{ work.tooltip }}-->
+<!--      </div>-->
 
       <!-- Company Name -->
       <p class="text-sm font-semibold mt-2 text-gray-900 dark:text-white">

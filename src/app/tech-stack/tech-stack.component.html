@@ -1,6 +1,6 @@
 <div class="flex flex-wrap justify-center gap-6 p-8">
   <div *ngFor="let tech of technologies"
-       class="relative w-24 h-24 flex items-center justify-center rounded-full shadow-xl bg-white dark:bg-gray-800 transform transition-all hover:scale-110 overflow-hidden">
+       class="cursor-pointer relative w-24 h-24 flex items-center justify-center rounded-full shadow-xl bg-white dark:bg-gray-800 transform transition-all hover:scale-110 overflow-hidden">
     <img [src]="tech.logo" [alt]="tech.name" class="h-16 w-16 object-cover p-2">
   </div>
 </div>
