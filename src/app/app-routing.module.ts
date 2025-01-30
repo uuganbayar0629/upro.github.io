@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {ArticlesComponent} from "./articles/articles.component";
 import {ProjectsComponent} from "./projects/projects.component";
 import {ArticleDetailComponent} from "./article-detail/article-detail.component";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class AppRoutingModule { }
