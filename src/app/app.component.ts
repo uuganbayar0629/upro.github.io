@@ -11,9 +11,9 @@ export class AppComponent implements OnInit {
 
   menus: any[] = [
     { href: '/', name: 'Home'},
-    { href: '/about', name: 'About'},
-    { href: '/articles', name: 'Articles'},
-    { href: '/projects', name: 'Projects'}
+    { href: '#/about', name: 'About'},
+    { href: '#/articles', name: 'Articles'},
+    { href: '#/projects', name: 'Projects'}
   ];
 
   constructor() {}
