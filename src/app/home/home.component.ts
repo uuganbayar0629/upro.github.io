@@ -15,7 +15,6 @@ export class HomeComponent {
     { name: 'Interactive BI LLC', tooltip : 'Интерактив Би Ай ХХК', role: 'Developer', beginYear: '2015', endYear: '2019', logo: 'assets/profile.jpg' },
   ];
 
-
   articles: any[] = [
     {
       title: 'ERP систем хөгжүүлэгчийн давуу тал юу вэ',

@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/uuganbayar0629.github.io/",
             "outputPath": "dist/my-portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
