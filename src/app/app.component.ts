@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import * as AOS from 'aos';
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,33 @@ export class AppComponent implements OnInit {
 
 
   menus: any[] = [
-    { href: '/', name: 'Home'},
-    { href: '#/about', name: 'About'},
-    { href: '#/articles', name: 'Articles'},
-    { href: '#/projects', name: 'Projects'}
+    { href: 'home', name: 'Home'},
+    { href: 'about', name: 'About'},
+    { href: 'articles', name: 'Articles'},
+    { href: 'projects', name: 'Projects'}
   ];
 
-  constructor() {}
+  activeSection: string = 'home'; // Default active section
+
+  constructor(private viewportScroller: ViewportScroller) {}
+
+
+  scrollTo(sectionId: string) {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const sections = this.menus.map(menu => ({
+      id: menu.href,
+      offset: document.getElementById(menu.href)?.getBoundingClientRect().top || 0,
+    }));
+
+    const visibleSection = sections.find(section => section.offset > -200 && section.offset < 200);
+    if (visibleSection) {
+      this.activeSection = visibleSection.id;
+    }
+  }
 
   projectsCount = '20+';
   experienceCount = 10;

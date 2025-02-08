@@ -26,11 +26,26 @@
                   <nav class="pointer-events-auto md:block">
                     <ul class="flex rounded-full px-3 text-sm font-medium custom-background">
                       <li *ngFor="let menu of menus">
-                        <a [href]="menu.href" class="relative block px-3 py-2 custom-text-link cursor-pointer">{{menu.name}}</a>
+                        <a (click)="scrollTo(menu.href)" class="relative block px-3 py-2 custom-text-link cursor-pointer">{{menu.name}}</a>
                       </li>
                     </ul>
                   </nav>
                 </div>
+
+                <!-- Bullet Navigation -->
+                <div class="fixed right-5 top-1/2 transform -translate-y-1/2 flex flex-col space-y-3">
+                  <div *ngFor="let menu of menus"
+                       (click)="scrollTo(menu.href)"
+                       class="flex justify-center items-center w-6 h-6 cursor-pointer">
+
+                    <div class="w-2 h-2 bg-gray-400 rounded-full transition-all duration-300 hover:w-3.5 hover:h-3.5 hover:bg-blue-500"
+                         [class.bg-blue-500]="menu.href === activeSection"
+                         [class.w-4]="menu.href === activeSection"
+                         [class.h-4]="menu.href === activeSection">
+                    </div>
+                  </div>
+                </div>
+
                 <div class="flex justify-end md:flex-1">
                   <div class="pointer-events-auto">
                     <button
@@ -57,7 +72,21 @@
       </header>
 
       <main class="flex-auto">
-          <router-outlet></router-outlet>
+
+        <!-- Sections -->
+        <section id="home">
+          <app-home></app-home>
+        </section>
+        <section id="about">
+          <app-about></app-about>
+        </section>
+        <section id="articles">
+          <app-articles></app-articles>
+        </section>
+        <section id="projects">
+          <app-projects></app-projects>
+        </section>
+<!--          <router-outlet></router-outlet>-->
       </main>
 
       <footer class="mt-16 flex-none">
