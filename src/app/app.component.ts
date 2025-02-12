@@ -1,6 +1,5 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as AOS from 'aos';
-import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -9,39 +8,23 @@ import {ViewportScroller} from "@angular/common";
 })
 export class AppComponent implements OnInit {
 
-
   menus: any[] = [
     { href: 'home', name: 'Home'},
     { href: 'about', name: 'About'},
-    { href: 'articles', name: 'Articles'},
-    { href: 'projects', name: 'Projects'}
+    { href: 'projects', name: 'Projects'},
+    { href: 'articles', name: 'Articles'}
   ];
 
-  activeSection: string = 'home'; // Default active section
-
-  constructor(private viewportScroller: ViewportScroller) {}
-
+  constructor() {
+  }
 
   scrollTo(sectionId: string) {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    const sections = this.menus.map(menu => ({
-      id: menu.href,
-      offset: document.getElementById(menu.href)?.getBoundingClientRect().top || 0,
-    }));
-
-    const visibleSection = sections.find(section => section.offset > -200 && section.offset < 200);
-    if (visibleSection) {
-      this.activeSection = visibleSection.id;
-    }
-  }
-
-  projectsCount = '20+';
+  projectsCount = 20;
   experienceCount = 10;
-  clientsCount = '100+';
+  clientsCount = 100;
 
   ngOnInit() {
     AOS.init({
@@ -110,48 +93,6 @@ export class AppComponent implements OnInit {
 
     // Add any localization logic here
     console.log(`Language switched to: ${lang}`);
-  }
-
-  travelImages = [
-    {
-      src: 'https://via.placeholder.com/150?text=Paris',
-      caption: 'Paris, France',
-      rotation: this.randomRotation(),
-      rowOffset: this.randomOffset()
-    },
-    {
-      src: 'https://via.placeholder.com/150?text=Tokyo',
-      caption: 'Tokyo, Japan',
-      rotation: this.randomRotation(),
-      rowOffset: this.randomOffset()
-    },
-    {
-      src: 'https://via.placeholder.com/150?text=NYC',
-      caption: 'New York, USA',
-      rotation: this.randomRotation(),
-      rowOffset: this.randomOffset()
-    },
-    {
-      src: 'https://via.placeholder.com/150?text=Sydney',
-      caption: 'Sydney, Australia',
-      rotation: this.randomRotation(),
-      rowOffset: this.randomOffset()
-    },
-    {
-      src: 'https://via.placeholder.com/150?text=Ulaanbaatar',
-      caption: 'Ulaanbaatar, Mongolia',
-      rotation: this.randomRotation(),
-      rowOffset: this.randomOffset()
-    },
-    // Add more images if necessary
-  ];
-
-  randomRotation(): number {
-    return Math.random() * 20 - 10; // Random rotation between -10 and 10 degrees
-  }
-
-  randomOffset(): number {
-    return Math.random() * 30 - 15; // Random vertical offset between -15px and +15px
   }
 
   animateValue(finalValue: number, property: any, duration: number = 2000): void {

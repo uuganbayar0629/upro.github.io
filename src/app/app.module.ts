@@ -13,7 +13,6 @@ import {ArticlesComponent} from './articles/articles.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {ArticleDetailComponent} from './article-detail/article-detail.component';
 import {SectionNavComponent} from './section-nav/section-nav.component';
-import {NgxPageScrollCoreModule} from "ngx-page-scroll-core";
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import {NgxPageScrollCoreModule} from "ngx-page-scroll-core";
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgxTippyModule,
-    NgxPageScrollCoreModule.forRoot({duration: 2500})
+    NgxTippyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
