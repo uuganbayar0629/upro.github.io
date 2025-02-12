@@ -20,6 +20,7 @@
     "@angular/router": "^16.0.0",
     "@fullpage/angular-fullpage": "^0.1.4",
     "aos": "^2.3.4",
+    "fullpage.js": "^4.0.33",
     "ngx-tippy-wrapper": "^6.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

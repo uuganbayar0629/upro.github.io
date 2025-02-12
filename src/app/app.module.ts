@@ -13,6 +13,7 @@ import {ArticlesComponent} from './articles/articles.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {ArticleDetailComponent} from './article-detail/article-detail.component';
 import {SectionNavComponent} from './section-nav/section-nav.component';
+import {AppHeaderComponent} from './app-header/app-header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {SectionNavComponent} from './section-nav/section-nav.component';
     ArticlesComponent,
     ProjectsComponent,
     ArticleDetailComponent,
-    SectionNavComponent
+    SectionNavComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,
