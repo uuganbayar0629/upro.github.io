@@ -1,12 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import * as AOS from 'aos';
+declare var fullpage: any; // Declare FullPage.js
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
   menus: any[] = [
     { href: 'home', name: 'Home'},
@@ -14,6 +15,14 @@ export class AppComponent implements OnInit {
     { href: 'projects', name: 'Projects'},
     { href: 'articles', name: 'Articles'}
   ];
+
+  ngAfterViewInit() {
+    new fullpage('#fullpage', {
+      navigation: true,
+      navigationPosition: 'right',
+      scrollingSpeed: 1000,
+    });
+  }
 
   constructor() {
   }

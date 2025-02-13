@@ -1,44 +1,48 @@
-<header class="pointer-events-none relative z-50 py-8">
-  <div class="mx-auto w-full max-w-7xl lg:px-8">
-    <div class="relative px-4 sm:px-8 lg:px-12">
-      <div class="mx-auto max-w-2xl lg:max-w-5xl">
-        <div class="relative flex gap-4">
-          <div class="flex flex-1">
-            <a href="/" aria-label="Home" class="pointer-events-auto w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center transform transition hover:scale-110">
-              <img
-                src="assets/profile.jpg"
-                alt="Profile Picture"
-                class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800 object-cover cursor-pointer"
-              />
-            </a>
-          </div>
-          <div class="flex flex-1 justify-end md:justify-center">
-            <nav class="pointer-events-auto md:block">
-              <ul class="flex rounded-full px-3 text-sm font-medium custom-background">
-                <li *ngFor="let menu of menus">
-                  <a (click)="scrollTo(menu.href)" class="relative block px-3 py-2 custom-text-link cursor-pointer">{{menu.name}}</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
 
-          <div class="flex justify-end md:flex-1">
-            <div class="pointer-events-auto">
-              <button
-                (click)="changeLanguage('en')"
-                class="rounded-full bg-white/90 px-3 py-2 custom-background cursor-pointer mr-2"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
-                </svg>
-              </button>
-              <button
-                (click)="toggleTheme()"
-                class="rounded-full bg-white/90 px-3 py-2 custom-background cursor-pointer"
-              >
-                <img src="assets/modes/light.png" alt="light-mode" class="rounded-full h-6 w-6" [class.hidden]="isDarkMode"/>
-                <img src="assets/modes/dark.png" alt="dark-mode" class="rounded-full h-6 w-6" [class.hidden]="!isDarkMode"/>
-              </button>
+
+<header class="pointer-events-none relative z-50 py-6 ring-1 ring-zinc-100 dark:ring-zinc-300/20 backdrop-blur-md">
+  <div class="sm:px-8">
+    <div class="mx-auto w-full max-w-7xl lg:px-8">
+      <div class="relative px-4 sm:px-8 lg:px-12">
+        <div class="mx-auto max-w-2xl lg:max-w-5xl">
+          <div class="relative flex gap-4">
+            <div class="flex flex-1">
+              <a href="/" aria-label="Home" class="pointer-events-auto w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center transform transition hover:scale-110">
+                <img
+                  src="assets/profile.jpg"
+                  alt="Profile Picture"
+                  class="w-10 h-10 rounded-full border-4 border-white dark:border-gray-800 object-cover cursor-pointer"
+                />
+              </a>
+            </div>
+            <div class="flex flex-1 justify-end md:justify-center">
+              <nav class="pointer-events-auto md:block">
+                <ul class="flex rounded-full px-3 text-sm font-medium custom-background">
+                  <li *ngFor="let menu of menus">
+                    <a (click)="scrollTo(menu.href)" class="relative block px-3 py-2 custom-text-link cursor-pointer">{{menu.name}}</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="flex justify-end md:flex-1">
+              <div class="pointer-events-auto">
+                <button
+                  (click)="changeLanguage('en')"
+                  class="rounded-full bg-white/90 px-3 py-2 custom-background cursor-pointer mr-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+                  </svg>
+                </button>
+                <button
+                  (click)="toggleTheme()"
+                  class="rounded-full bg-white/90 px-3 py-2 custom-background cursor-pointer"
+                >
+                  <img src="assets/modes/light.png" alt="light-mode" class="rounded-full h-6 w-6" [class.hidden]="isDarkMode"/>
+                  <img src="assets/modes/dark.png" alt="dark-mode" class="rounded-full h-6 w-6" [class.hidden]="!isDarkMode"/>
+                </button>
+              </div>
             </div>
           </div>
         </div>

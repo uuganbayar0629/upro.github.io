@@ -7,31 +7,27 @@
       </div>
     </div>
     <div class="relative flex w-full flex-col">
+
       <app-header></app-header>
-
-      <main class="flex-auto">
-        <!-- Sections -->
-        <section id="home">
+      <div id="fullpage">
+        <div class="section" id="home">
           <app-home></app-home>
-        </section>
-        <section id="about">
-          <app-about></app-about>
-        </section>
-        <section id="projects">
-          <app-projects></app-projects>
-        </section>
-        <section id="articles">
-          <app-articles></app-articles>
-        </section>
-      </main>
-
-      <footer class="mt-16 flex-none">
-        <div class="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
-          <div class="max-w-7xl mx-auto px-6 text-center">
-            <p>© 2025 Uuganbayar. All rights reserved.</p>
-          </div>
         </div>
-      </footer>
+        <div class="section" id="about">
+          <app-about></app-about>
+        </div>
+        <div class="section" id="projects">
+          <app-projects></app-projects>
+        </div>
+        <div class="section" id="articles">
+          <app-articles></app-articles>
+        </div>
+        <div class="section" id="footer">
+          <app-footer></app-footer>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>
