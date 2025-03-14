@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     new fullpage('#fullpage', {
+      licenseKey: 'GPLv3',
       navigation: true,
       navigationPosition: 'right',
       scrollingSpeed: 1000,
