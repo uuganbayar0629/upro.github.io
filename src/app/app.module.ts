@@ -14,8 +14,10 @@ import {ProjectsComponent} from './projects/projects.component';
 import {ArticleDetailComponent} from './article-detail/article-detail.component';
 import {SectionNavComponent} from './section-nav/section-nav.component';
 import {AppHeaderComponent} from './app-header/app-header.component';
-import { ArticleShortComponent } from './article-short/article-short.component';
-import { FooterComponent } from './footer/footer.component';
+import {ArticleShortComponent} from './article-short/article-short.component';
+import {FooterComponent} from './footer/footer.component';
+import {GalleryComponent} from './gallery/gallery.component';
+import {CopyTextComponent} from './copy-text/copy-text.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FooterComponent } from './footer/footer.component';
     SectionNavComponent,
     AppHeaderComponent,
     ArticleShortComponent,
-    FooterComponent
+    FooterComponent,
+    GalleryComponent,
+    CopyTextComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<div class="relative inline-flex items-center cursor-pointer group custom-text-link" (click)="copyToClipboard()">
+  <!-- Displayed Text -->
+  <span class="px-2" >
+    {{ textToCopy }}
+  </span>
+  <!-- Copied Tooltip -->
+  <span
+    class="absolute top-[-35px] left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded transition-opacity duration-300"
+    [class.opacity-0]="!copied">
+    Copied!
+  </span>
+</div>

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  email: string = 'uuganbayar.btsogt@gmail.com';
+  copied: boolean = false;
+
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.email).then(() => {
+      this.copied = true;
+      setTimeout(() => (this.copied = false), 1500); // Hide after 1.5 sec
+    });
+  }
 }

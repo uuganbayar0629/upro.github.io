@@ -1,8 +1,71 @@
-<!--<app-article-short></app-article-short>-->
-<footer class="mt-16 flex-none">
-  <div class="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
-    <div class="max-w-7xl mx-auto px-6 text-center">
+<div class="sm:px-8 pb-8">
+  <div class="mx-auto w-full max-w-7xl lg:px-8">
+    <div class="relative px-4 sm:px-8 lg:px-12">
+      <div class="mx-auto max-w-2xl lg:max-w-5xl">
+        <div class="max-w-5xl mx-auto px-6 p-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Contact Info -->
+            <div>
+              <h2 class="text-3xl font-bold mb-4">Sometimes it's just better to contact directly</h2>
+              <p class="text-gray-600 mb-4">
+                Engaging in real-time conversations allows us to seek immediate clarification, deeper understanding of issues, and promotes quicker decision-making.
+              </p>
+
+              <div class="grid space-y-3">
+<!--                <a href="https://github.com" target="_blank" class="custom-text-link">GitHub</a>-->
+<!--                <a href="https://linkedin.com" target="_blank" class="custom-text-link">LinkedIn</a>-->
+                <app-copy-text [textToCopy]="'uuganbayar.btsogt@gmail.com'"></app-copy-text>
+                <app-copy-text [textToCopy]="'+976 86001112'"></app-copy-text>
+              </div>
+<!--              <div class="flex justify-items-start mt-4 space-x-4">-->
+<!--                <a href="https://linkedin.com/in/yourprofile" class="flex items-center px-4 py-2 w-fit bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition">-->
+<!--                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">-->
+<!--                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />-->
+<!--                  </svg>-->
+<!--                  <span class="px-2">Call me</span>-->
+<!--                </a>-->
+<!--              </div>-->
+            </div>
+            <!-- Contact Form -->
+            <div class="border rounded-lg shadow-md ">
+              <div class="px-4 py-4">
+                <h3 class="text-xl font-semibold mb-4">Send me a message</h3>
+                <form class="space-y-4">
+                  <div>
+                    <label class="block">Name</label>
+                    <input type="text" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
+                  </div>
+                  <div>
+                    <label class="block">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" placeholder="Your Email">
+                  </div>
+                  <div>
+                    <label class="block">Message</label>
+                    <textarea class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" rows="4" placeholder="Write your message..."></textarea>
+                  </div>
+                  <div>
+                    <a href="https://linkedin.com/in/yourprofile" class="flex items-center px-4 py-2 w-fit bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                      </svg>
+                      <span class="px-2">Send me</span>
+                    </a>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="flex-none">
+  <div class="border-t border-zinc-100 py-4 dark:border-zinc-700/40">
+    <div class="max-w-7xl mx-auto px-10 pb-8 text-center">
       <p>© 2025 Uuganbayar. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
